@@ -3,6 +3,7 @@ import { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useGLTF, Environment, Loader } from "@react-three/drei";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
+import Snow from "./Snow";
 
 const min = 0;
 const maxX = 0.3;
@@ -48,15 +49,14 @@ function Banana({ z }) {
 
 useGLTF.preload("/elium-v1-transformed.glb");
 
-export default function App({ count = 120, depth = 80 }) {
+export default function App({ count = 70, depth = 80 }) {
   return (
     <>
       <div className="title-container">
         <h1>ELIUM</h1>
-        <p></p>
       </div>
       <Canvas gl={{ alpha: false }} camera={{ near: 0.01, far: 110, fov: 30 }}>
-        <color attach="background" args={["#fff"]} />
+        <color attach="background" args={["tomato"]} />
         <Suspense fallback={null}>
           <spotLight position={[10, 10, 10]} intensity={1} />
 
@@ -64,12 +64,13 @@ export default function App({ count = 120, depth = 80 }) {
           {Array.from({ length: count }, (_, i) => (
             <Banana key={i} z={-(i / count) * depth - 20} />
           ))}
+          <Snow />
           <EffectComposer>
             <DepthOfField
-              target={[0, 0, depth / 2]}
-              focasLength={0.5}
-              bokehScale={5}
-              height={700}
+              target={[0, 0, 50]}
+              focalLength={2.1}
+              bokehScale={12}
+              height={500}
             />
           </EffectComposer>
         </Suspense>
