@@ -8,10 +8,9 @@ body,
   overflow: hidden;
   font-family: "InterWeb", sans-serif;
 }
-html {
-  font-size: 100px;
-}
+
 .title-container {
+  font-size: 100px;
   position: fixed;
   z-index: 999;
   top: 50%;

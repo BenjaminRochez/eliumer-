@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { Suspense, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useGLTF, Environment } from "@react-three/drei";
+import { useGLTF, Environment, Loader } from "@react-three/drei";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
 
 const min = 0;
@@ -74,6 +74,7 @@ export default function App({ count = 120, depth = 80 }) {
           </EffectComposer>
         </Suspense>
       </Canvas>
+      <Loader />
     </>
   );
 }
