@@ -51,6 +51,10 @@ useGLTF.preload("/elium-v1-transformed.glb");
 export default function App({ count = 120, depth = 80 }) {
   return (
     <>
+      <div className="title-container">
+        <h1>ELIUM</h1>
+        <p></p>
+      </div>
       <Canvas gl={{ alpha: false }} camera={{ near: 0.01, far: 110, fov: 30 }}>
         <color attach="background" args={["#fff"]} />
         <Suspense fallback={null}>

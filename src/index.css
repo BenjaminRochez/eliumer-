@@ -6,14 +6,41 @@ body,
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: "Changa One", cursive;
+  font-family: "InterWeb", sans-serif;
 }
-h2 {
-  font-weight: 400;
+html {
+  font-size: 100px;
+}
+.title-container {
   position: fixed;
   z-index: 999;
   top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
-  color: #e03d52;
+  text-align: center;
+}
+h1 {
+  color: #000;
+  margin: 0;
+}
+h1:after {
+  -webkit-text-stroke: 2px black;
+  color: #fff;
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  content: "ELIUM";
+}
+h1:before {
+  color: #000;
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  content: "ELIUM";
+}
+p {
+  font-size: 0.36rem;
+  font-weight: 800;
+  margin: 0 0 0.38rem;
+  color: #000;
 }
